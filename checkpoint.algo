@@ -1,0 +1,15 @@
+ALGORITHM counting_chars                                  // giving the name of the algorithm
+VAR                                                       // declaring the variables
+    Z : STRING = "hello World.";                          // creating a sring that contains the what we will be working on 
+    i,output : INTEGER;                                   // creating the counter and the finale output
+BEGIN                                                     // starting the code
+    FOR i FROM min TO max STEP Z  DO                      // creating a loop for that uses i as the counter that counts from the min of Z till the rest of it 
+        SWITCH (Z[i]) DO                                  // starting with the character which will depend on the number i
+            default : output; BREAK;                      // this if for a example if there is a number inside the string
+            case CHAR : output := output+1; BREAK;        // if it detects a character then output will take another 1
+            case '.' : output := output+1; BREAK;         // same if a . was detected
+            chase ' ' : ouput  := output+1; BREAK;        // same if a space was detected
+        END_SWITCH                                        // end of switch
+    END_FOR                                               // end of for
+    Write ("the number of characters is : ", output);     // write the output
+END                                                       // the end of the code
