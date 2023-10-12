@@ -1,15 +1,27 @@
 ALGORITHM counting_chars                                  // giving the name of the algorithm
 VAR                                                       // declaring the variables
-    Z : STRING = "hello World.";                          // creating a sring that contains the what we will be working on 
-    i,output : INTEGER;                                   // creating the counter and the finale output
+    Z : STRING;        
+    c :CHAR;
+    l_s, word, vowel : INTEGER := 0;                           // length of the string (l_s), the number of words(word), and numer of vowels (vowel) are declared as integer                                 
 BEGIN                                                     // starting the code
-    FOR i FROM min TO max STEP Z  DO                      // creating a loop for that uses i as the counter that counts from the min of Z till the rest of it 
-        SWITCH (Z[i]) DO                                  // starting with the character which will depend on the number i
-            default : output; BREAK;                      // this if for a example if there is a number inside the string
-            case CHAR : output := output+1; BREAK;        // if it detects a character then output will take another 1
-            case '.' : output := output+1; BREAK;         // same if a . was detected
-            chase ' ' : ouput  := output+1; BREAK;        // same if a space was detected
-        END_SWITCH                                        // end of switch
-    END_FOR                                               // end of for
-    Write ("the number of characters is : ", output);     // write the output
-END                                                       // the end of the code
+    Raad ("enter characters to form a string", c)   
+    Z:=Z+c;                                        
+    REPEAT
+        SWITCH (c) DO
+            default : l_s; word; BREAK;                     
+            case CHAR : l_s := l_s+1; word; BREAK;  
+            case ' ' : l_s := l_s+1; word := word +1; BREAK; 
+            chase '.' : l_s  := l_s+1; word := word +1; BREAK;        
+        END_SWITCH                                       // end of switch   
+        SWITCH ((c='a') OR (c='e') OR (c='i') OR(c='o') OR (c='u') OR (c='y')) DO
+            case True : vowel := vowel + 1; BREAK;
+            default : vowel; BREAK;
+        END_SWITCH                                      // end of switch   
+    UNTIL (c='.')                  
+                                                                               
+    Write ("the final string is :", Z );         
+    Write ("the number of characters is : ", l_s);     // write the number of characters
+    Write ("the number of words is :", word);         // write the number of words
+    Write ("the number of vowels is :"; vowel);        // write the number of vowels
+END    
+                                                  // the end of the code
